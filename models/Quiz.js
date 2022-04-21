@@ -20,16 +20,22 @@ export class Quiz{
      * @returns {Question} the question found
      * 
      */
+    
     getQuestionIndex(){
         return this.questions[this.questionIndex]
     }
 
+    isEnded(){
+        return this.questions.length === this.questionIndex
+    }
+
+
     guess(answer){
 
         if (this.getQuestionIndex().correctAnswer(answer)){
-            this.score++;
-        }
+                this.score++;
+            }
 
-        this.questionIndex++
-    }
+            this.questionIndex++
+        }
 }
